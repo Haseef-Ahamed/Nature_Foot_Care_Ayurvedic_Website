@@ -30,21 +30,7 @@ const Footer = () => {
                         {/* <span className='flex mt-2 font-sans text-white/70 text-[16px]' data-aos="fade-up" data-aos-delay="600"><FaRegClock className='mt-1'/>&nbsp; Sat - Sun : 8:00AM - 5:00PM</span> */}
                     </div>
                 </div>
-
-                <div className="text-start">
-                    <div className='mt-6 md:mt-30 md:ml-12'>
-                        <h2 className='text-[18px] md:text-[24px] text-white' data-aos="fade-up" data-aos-delay="700">Visit Our Branches</h2>
-                        <p className="flex mb-2 mt-6 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="800"><IoLocationOutline className='h-5 w-5 mr-2 mt-1'/>&nbsp; No.57,W A Silva mawatha, Colombo 06  </p>
-                        {/* <p className="mb-2 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="900"> </p> */}
-                        <p className="flex mb-8 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="900"><IoLocationOutline className='h-5 w-5 mr-2 mt-1'/>&nbsp; No.8 A, Vajira road, bambalapitya, Colombo 04</p>
-                    </div>
-                    <div className='md:ml-12'>
-                        <h2 className='text-[18px] md:text-[24px] text-white' data-aos="fade-up" data-aos-delay="1000">Contact</h2>
-                        <p className="flex mb-3 mt-4 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="1100"><span><FiPhone className='w-4 h-4 mr-2 mt-2' /></span>&nbsp;+94 11 236 1136 / +94 74 261 0334</p>
-                        <p className="flex mb-8 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="1200"><span><AiOutlineMail className='w-5 h-5 mr-2 mt-1 font-bold' /></span>&nbsp;ayurvedafootcarenewnature@gmail.com</p>
-                    </div>
-                </div>
-                <div className='mr-12'>
+                <div className='mr-5'>
                     <div className='text-start'>
                         <h2 className='text-[18px] md:text-[24px] text-white mt-4 md:mt-12 mb-6' data-aos="fade-up" data-aos-delay="1300">Explore</h2>
                         <ul className=''>
@@ -74,6 +60,20 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
+                <div className="text-start">
+                    <div className='mt-6 md:mt-20 mb-5 mr-12'>
+                        <h2 className='text-[18px] md:text-[25px] text-white' data-aos="fade-up" data-aos-delay="700">Visit Our Branches</h2>
+                        <p className="flex mb-2 mt-6 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="800"><IoLocationOutline className='h-5 w-5 mr-2 mt-1'/>&nbsp; No.57,W A Silva mawatha, Colombo 06  </p>
+                        {/* <p className="mb-2 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="900"> </p> */}
+                        <p className="flex mb-8 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="900"><IoLocationOutline className='h-5 w-5 mr-2 mt-1'/>&nbsp; No.8 A, Vajira road, bambalapitya, Colombo 04</p>
+                    </div>
+                    <div className=''>
+                        <h2 className='text-[18px] md:text-[24px] text-white' data-aos="fade-up" data-aos-delay="1000">Contact</h2>
+                        <p className="flex mb-3 mt-4 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="1100"><span><FiPhone className='w-4 h-4 mr-2 mt-2' /></span>&nbsp;+94 11 236 1136 / +94 74 261 0334</p>
+                        <p className="flex mb-8 text-white/70 font-sans" data-aos="fade-up" data-aos-delay="1200"><span><AiOutlineMail className='w-5 h-5 mr-2 mt-1 font-bold' /></span>&nbsp;ayurvedafootcarenewnature@gmail.com</p>
+                    </div>
+                </div>
+
             </div>
 
             <div className="md:flex mx-auto md:justify-between md:ml-6 pb-4 pt-6 border-t border-[#BECC5B] md:mr-12 text-sm text-white/70">
