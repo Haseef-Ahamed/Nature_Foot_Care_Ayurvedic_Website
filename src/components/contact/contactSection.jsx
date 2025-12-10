@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
   const[form, setForm] = useState({
+    title: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -17,33 +18,41 @@ export default function ContactSection() {
     setForm((prev) => ({ ...prev, [name]: value }));
   }  
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    emailjs.send(
+  const templateParams = {
+    title: form.title || "General Inquiry",
+    name: `${form.firstName} ${form.lastName}`.trim(),
+    from_email: form.email,          
+    phone: form.phone,
+    message: form.message,
+    to_email: "saman2018al@gmail.com",
+  };
+
+  emailjs
+    .send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        ...form,
-        to_email: "denverma7@gmail.com",
-      },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
-      alert("Thank you for your message! We will get back to you soon.")
+      alert("Thank you for your message! We will get back to you soon.");
       setForm({
+        title: "",
         firstName: "",
         lastName: "",
         email: "",
         phone: "",
         message: "",
-      })
+      });
     })
     .catch((error) => {
-      alert('There was and error sending your message. Please try again later.')
-      console.log(error)
-    })
-  };
+      console.error("EmailJS Error:", error);
+      alert("There was an error sending your message. Please try again later.");
+    });
+};
 
 return (
     <section className="bg-[#fdf8e9] py-10">
