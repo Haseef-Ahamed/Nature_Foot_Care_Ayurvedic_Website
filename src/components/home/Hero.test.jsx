@@ -3,6 +3,11 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 import Hero from './Hero';
 
+// Mock the image import
+vi.mock('../../assets/Images/Home_hero.jpg', () => ({
+  default: 'mocked-image-path.jpg'
+}));
+
 // Mock the child components
 vi.mock('../Header', () => ({
   default: () => <div data-testid="header">Header</div>
