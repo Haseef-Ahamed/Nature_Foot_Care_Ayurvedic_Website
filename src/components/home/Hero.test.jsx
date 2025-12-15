@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Hero from './Hero';
 
 // Mock the image import
-vi.mock('../../assets/Images/Home_hero.jpg', () => ({
+vi.mock('../../assets/images/Home_hero.jpg', () => ({
   default: 'mocked-image-path.jpg'
 }));
 
