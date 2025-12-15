@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Logo from '../assets/Images/Nature Foot Care Logo.png';
+import Logo from '../assets/images/Nature Foot Care Logo.png';
 import { FaFacebookF } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
 import { FaRegClock } from "react-icons/fa6";

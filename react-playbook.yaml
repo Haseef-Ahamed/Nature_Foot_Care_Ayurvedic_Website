@@ -1,0 +1,131 @@
+---
+- name: Deploy Pre-built React App (Dist Only)
+  hosts: webservers
+  become: yes
+  
+  tasks:
+    - name: Install Nginx web server
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+    
+    - name: Create application directory
+      file:
+        path: /var/www/nature-foot-care
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
+    
+    - name: Backup existing deployment if exists
+      shell: |
+        if [ -d /var/www/nature-foot-care/dist ]; then
+          timestamp=$(date +%Y%m%d_%H%M%S)
+          mv /var/www/nature-foot-care/dist /var/www/nature-foot-care/dist.backup.$timestamp
+          echo "Backup created: dist.backup.$timestamp"
+        fi
+      register: backup_result
+      ignore_errors: yes
+    
+    - name: Display backup info
+      debug:
+        var: backup_result.stdout
+      when: backup_result.stdout is defined
+    
+    - name: Copy pre-built dist folder to server
+      synchronize:
+        src: ./dist/
+        dest: /var/www/nature-foot-care/dist/
+        delete: yes
+        recursive: yes
+    
+    - name: Set correct ownership on dist folder
+      file:
+        path: /var/www/nature-foot-care/dist
+        owner: www-data
+        group: www-data
+        recurse: yes
+    
+    - name: Create Nginx configuration
+      copy:
+        content: |
+          server {
+              listen 80 default_server;
+              listen [::]:80 default_server;
+              
+              server_name _;
+              
+              root /var/www/nature-foot-care/dist;
+              index index.html index.htm;
+              
+              # Logging
+              access_log /var/log/nginx/nature-foot-care-access.log;
+              error_log /var/log/nginx/nature-foot-care-error.log;
+              
+              # Gzip compression
+              gzip on;
+              gzip_vary on;
+              gzip_min_length 1024;
+              gzip_types text/plain text/css text/xml text/javascript application/javascript application/json application/xml+rss;
+              
+              # Main location - React Router support
+              location / {
+                  try_files $uri $uri/ /index.html;
+              }
+              
+              # Static assets with long cache
+              location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|otf)$ {
+                  expires 1y;
+                  add_header Cache-Control "public, immutable";
+                  access_log off;
+              }
+              
+              # Security headers
+              add_header X-Frame-Options "SAMEORIGIN" always;
+              add_header X-Content-Type-Options "nosniff" always;
+              add_header X-XSS-Protection "1; mode=block" always;
+          }
+        dest: /etc/nginx/sites-available/nature-foot-care
+      notify: Restart Nginx
+    
+    - name: Remove default Nginx site
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      notify: Restart Nginx
+    
+    - name: Enable nature-foot-care site
+      file:
+        src: /etc/nginx/sites-available/nature-foot-care
+        dest: /etc/nginx/sites-enabled/nature-foot-care
+        state: link
+      notify: Restart Nginx
+    
+    - name: Test Nginx configuration
+      command: nginx -t
+      register: nginx_test
+      changed_when: false
+    
+    - name: Display Nginx test result
+      debug:
+        msg: "{{ nginx_test.stderr_lines }}"
+    
+    - name: Ensure Nginx is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+    
+    - name: Display success message
+      debug:
+        msg: 
+          - "✅ Deployment completed successfully!"
+          - "🌐 Access your app at: http://{{ ansible_host }}"
+          - "📁 Deployed to: /var/www/nature-foot-care/dist"
+  
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
