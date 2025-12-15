@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FiPlusCircle } from "react-icons/fi";
-import Testi from '../../assets/Images/testimonials/testi.svg';
+import Testi from '../../assets/images/testimonials/testi.svg';
 import Testi1 from "../../assets/images/testimonials/1b.png";
-import Testi2 from '../../assets/Images/testimonials/2g.png';
-import Testi4 from '../../assets/Images/testimonials/3g.png';
-import Testi3 from '../../assets/Images/testimonials/4b.png';
+import Testi2 from '../../assets/images/testimonials/2g.png';
+import Testi4 from '../../assets/images/testimonials/3g.png';
+import Testi3 from '../../assets/images/testimonials/4b.png';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

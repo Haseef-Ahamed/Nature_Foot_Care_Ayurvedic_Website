@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from '../Header';
 import { FiPlusCircle } from "react-icons/fi";
-import Image1 from '../../assets/Images/blogpost/blog-post-1.jpg'
-import Image2 from '../../assets/Images/blogpost/blog-post-2.jpg'
-import Image3 from '../../assets/Images/blogpost/blog-post-3.jpg'
+import Image1 from '../../assets/images/blogpost/blog-post-1.jpg'
+import Image2 from '../../assets/images/blogpost/blog-post-2.jpg'
+import Image3 from '../../assets/images/blogpost/blog-post-3.jpg'
 
 const Blog = () => {
   // Blog articles data

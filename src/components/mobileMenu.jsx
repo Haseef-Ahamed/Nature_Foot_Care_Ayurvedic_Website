@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Menu, X } from 'lucide-react';
-import Logo from '../assets/Images/Nature Foot Care Logo.png';
+import Logo from '../assets/images/Nature Foot Care Logo.png';
 import { NavLink } from 'react-router-dom';
 
 const mobileMenu = () => {

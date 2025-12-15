@@ -1,9 +1,9 @@
 import React from 'react';
 import { FiPlusCircle } from "react-icons/fi";
-import TeamMember1 from '../../assets/Images/team/team-1.jpg'
-import TeamMember2 from '../../assets/Images/team/team-2.jpg'
-import TeamMember3 from '../../assets/Images/team/team-3.jpg'
-import TeamMember4 from '../../assets/Images/team/team-4.jpg'
+import TeamMember1 from '../../assets/images/team/team-1.jpg'
+import TeamMember2 from '../../assets/images/team/team-2.jpg'
+import TeamMember3 from '../../assets/images/team/team-3.jpg'
+import TeamMember4 from '../../assets/images/team/team-4.jpg'
 import { FaFacebookF } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
 

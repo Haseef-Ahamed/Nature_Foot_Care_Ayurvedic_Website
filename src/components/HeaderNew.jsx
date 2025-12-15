@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react';
-import Logo from '../assets/Images/Nature Foot Care Logo.png'
+import Logo from '../assets/images/Nature Foot Care Logo.png'
 import { FaPhone } from "react-icons/fa6";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa6";

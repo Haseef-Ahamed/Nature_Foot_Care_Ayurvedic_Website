@@ -1,5 +1,5 @@
 import React from "react";
-import Image1 from "../../assets/Images/process.jpg";
+import Image1 from "../../assets/images/process.jpg";
 import { FiPlusCircle } from "react-icons/fi";
 
 const Process = () => {

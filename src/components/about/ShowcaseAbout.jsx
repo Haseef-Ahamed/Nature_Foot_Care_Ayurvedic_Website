@@ -3,11 +3,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FiPlusCircle } from "react-icons/fi";
-import Image1 from '../../assets/Images/showcase/show-07.png'
-import Image2 from '../../assets/Images/showcase/show-08.png'
-import Image4 from '../../assets/Images/showcase/show-09.png'
-import Image3 from '../../assets/Images/showcase/show-10.png'
-import Image5 from '../../assets/Images/showcase/show-11.png'
+import Image1 from '../../assets/images/showcase/show-07.png'
+import Image2 from '../../assets/images/showcase/show-08.png'
+import Image4 from '../../assets/images/showcase/show-09.png'
+import Image3 from '../../assets/images/showcase/show-10.png'
+import Image5 from '../../assets/images/showcase/show-11.png'
 import AOS from 'aos';
 
 const Showcase = () => {

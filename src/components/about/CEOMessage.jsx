@@ -1,7 +1,7 @@
 import React from 'react'
-import OilDropImage from '../../assets/Images/OilDropping.jpg'
-import QuoteIcon from '../../assets/Images/testimonial-icon.png'
-import SignatureImage from '../../assets/Images/Signature.png'
+import OilDropImage from '../../assets/images/OilDropping.jpg'
+import QuoteIcon from '../../assets/images/testimonial-icon.png'
+import SignatureImage from '../../assets/images/Signature.png'
 
 const CEOMessage = () => {
   return (

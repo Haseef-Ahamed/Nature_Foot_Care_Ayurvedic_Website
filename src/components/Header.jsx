@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../assets/Images/Nature Foot Care Logo.png'
+import Logo from '../assets/images/Nature Foot Care Logo.png'
 import { FiPhone } from "react-icons/fi";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
