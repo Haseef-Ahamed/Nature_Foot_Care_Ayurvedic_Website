@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import BGImage from '../../assets/Images/Home_hero.jpg'
+import BGImage from '../../assets/images/Home_hero.jpg'
 import Header from '../Header';
 import { FiPlusCircle } from "react-icons/fi";
 import AOS from 'aos'
