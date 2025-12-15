@@ -1,7 +1,7 @@
 import React from 'react'
 import Pushpin from '../assets/images/pushPin.png'
 import EmailIcon from '../assets/images/EmailIcon.png'
-import PhoneIcon from '../assets/images/phoneIcon.png'
+import PhoneIcon from '../assets/images/PhoneIcon.png'
 import FooterNew from './FooterNew'
 import HeaderNew from './HeaderNew'
 
