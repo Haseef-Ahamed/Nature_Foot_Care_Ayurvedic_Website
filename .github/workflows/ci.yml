@@ -2,7 +2,7 @@ name: Build and Test React Application
 on: 
     push:
         branches:
-        - hsf
+        - main
 
 permissions:
     contents: write
